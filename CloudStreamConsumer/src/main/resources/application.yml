@@ -1,0 +1,16 @@
+server:
+  port: 8096
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+          - localhost:9092
+      bindings:
+        messageConsumer-in-0:
+         binder: kafka
+         destination: test
+         content-type: application/json
+         group: messageGroup
